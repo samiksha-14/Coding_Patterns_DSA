@@ -58,6 +58,7 @@ one character of the possible permutation(pattern)
 while iterating over the while loop check that if you hit the size of the window....there can be two possibilities
 one is that you have found your possible permutation in that case your count variable will become 0 
 if it is not zero then that window is not the permutation now start shifting your window towards right and maintain the count variable
+
 Time Complexity --> O(N)
 Space Complexity --> O(p)
 */
