@@ -20,6 +20,7 @@ using namespace std;
        for(int i=0;i<=n;i++){
            for(int j=0;j<=k;j++){
                if(i==0){
+              //  '0' sum can always be found through an empty set
                    if(j==0) dp[i][j]=true;
                    else
                    dp[i][j]=false;
@@ -47,6 +48,10 @@ In the knapsack problem we were not able to include the item if its weight is gr
 profit by not including that element, here we will do the same , if the element's value is greater than the sum that means we cannot choose that element
 to be a part of our subset hence we just ignore it , but if the element's value is less than or equal to the sum we have the choice to include it or 
 ignore it.
+This boils down to:-
+For every possible sum ‘j’ (where 0 <= j <= sum), we have two options:
+Exclude the number. In this case, we will see if we can get the sum ‘j’ from the subset excluding this number => dp[i-1][j]
+Include the number if its value is not more than ‘j’. In this case, we will see if we can find a subset to get the remaining sum => dp[i-1][j-num[i]]
 Time Complexity --> O(n*sum)
 Space Complexity --> O(n*sum) 
 */
